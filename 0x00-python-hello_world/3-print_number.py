@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-number = 25
+number = 98
 
 print(number, 'Battery street')
