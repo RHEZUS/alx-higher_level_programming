@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-str = "Python script that prints a string stored"
+str = "Holberton School"
 
 i = 0
 
-for i in range(3):
-	print(str)
+print(f"{str:s}{str:s}{str:s}")
+
+#for i in range(3):
+#	print(str)
 
 print(str[:9])
