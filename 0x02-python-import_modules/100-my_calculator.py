@@ -13,7 +13,7 @@ a = int(sys.argv[1])
 b = int(sys.argv[3])
 
 match sys.argv[2]:
-    case'+':
+    case '+':
         print("{} + {} = {}".format(a, b, add(a, b)))
     case '-':
         print("{} - {} = {}".format(a, b, sub(a, b)))
