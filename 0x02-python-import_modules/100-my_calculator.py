@@ -5,6 +5,7 @@ if __name__ == "__main__":
 
 length = len(sys.argv) - 1
 
+# checks the number of arguments
 if length != 3:
     print("Usage: ./100-my_calculator.py <a> <operator> <b>")
     sys.exit(1)
