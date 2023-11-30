@@ -18,7 +18,7 @@ match sys.argv[2]:
         print("{} + {} = {}".format(a, b, add(a, b)))
     case '-':
         print("{} - {} = {}".format(a, b, sub(a, b)))
-    case '*':
+    case "*":
         print("{} * {} = {}".format(a, b, mul(a, b)))
     case '/':
         print("{} / {} = {}".format(a, b, div(a, b)))
