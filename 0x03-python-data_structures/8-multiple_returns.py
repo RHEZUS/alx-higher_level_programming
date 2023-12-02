@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
+def multiple_returns(sentence):
+    return (len(sentence), None if len(sentence) == 0 else sentence[0])
