@@ -11,7 +11,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *tortoise = *head, *hare = *head, *stack_top = NULL;
-	listint_t *temp = NULL, *new_node;
+	listint_t *temp, *new_node;
 
 	/* Traverse the linked list and push elements onto the stack */
 	while (hare != NULL && hare->next != NULL)
