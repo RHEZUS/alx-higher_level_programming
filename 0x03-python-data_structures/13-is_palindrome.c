@@ -10,37 +10,40 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow = *head, *fast = *head, *stack_top = NULL;
+	listint_t *tortoise = *head, *hare = *head, *stack_top = NULL;
 
-
-	while (fast != NULL && fast->next != NULL)
+	/* Traverse the linked list and push elements onto the stack */
+	while (hare != NULL && hare->next != NULL)
 	{
-		listint_t *newNode = malloc(sizeof(listint_t));
+		/* Push the value onto the stack */
+		listint_t *new_node = malloc(sizeof(listint_t));
 
-		if (newNode == NULL)
+		if (new_node == NULL)
 			return (0);
 
-		newNode->n = slow->n;
-		newNode->next = stack_top;
-		stack_top = newNode;
+		new_node->n = tortoise->n;
+		new_node->next = stack_top;
+		stack_top = new_node;
 
-		slow = slow->next;
-		fast = fast->next->next;
+		tortoise = slow->next;
+		hare = hare->next->next;
 	}
+	/* If the length of the linked list is odd, skip the middle element */
+	if (hare != NULL)
+		tortoise = tortoise->next;
 
-	if (fast != NULL)
-		slow = slow->next;
-
-	while (slow != NULL)
+	/* Traverse the remaining linked list and compare with the*/
+	/* elements popped from the stack */
+	while (tortoise != NULL)
 	{
-
-		if (stack_top == NULL || stack_top->n != slow->n)
+		/* Pop the value from the stack */
+		if (stack_top == NULL || stack_top->n != tortoise->n)
 			return (0);
 		listint_t *temp = stack_top;
 
 		stack_top = stack_top->next;
 		free(temp);
-		slow = slow->next;
+		tortoise = tortoise->next;
 	}
 	return (1);
 }
