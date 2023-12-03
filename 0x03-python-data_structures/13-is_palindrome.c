@@ -25,7 +25,7 @@ int is_palindrome(listint_t **head)
 		new_node->next = stack_top;
 		stack_top = new_node;
 
-		tortoise = slow->next;
+		tortoise = tortoise->next;
 		hare = hare->next->next;
 	}
 	/* If the length of the linked list is odd, skip the middle element */
