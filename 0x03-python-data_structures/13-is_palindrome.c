@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *slow = *head;
 	listint_t *fast = *head;
-	listint_t *stackTop = NULL;
+	listint_t *stack_top = NULL;
 
 	/* Traverse the linked list and push elements onto the stack */
 	while (fast != NULL && fast->next != NULL)
@@ -24,8 +24,8 @@ int is_palindrome(listint_t **head)
 			return (0);
 
 		newNode->n = slow->n;
-		newNode->next = stackTop;
-		stackTop = newNode;
+		newNode->next = stack_top;
+		stack_top = newNode;
 
 		slow = slow->next;
 		fast = fast->next->next;
@@ -39,11 +39,11 @@ int is_palindrome(listint_t **head)
 	while (slow != NULL)
 	{
 		/* Pop the value from the stack */
-		if (stackTop == NULL || stackTop->n != slow->n)
+		if (stack_top == NULL || stack_top->n != slow->n)
 			return (0);
-		listint_t *temp = stackTop;
+		listint_t *temp = stack_top;
 
-		stackTop = stackTop->next;
+		stack_top = stack_top->next;
 		free(temp);
 		slow = slow->next;
 	}
