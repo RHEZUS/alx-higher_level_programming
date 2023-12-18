@@ -9,5 +9,5 @@ def safe_print_list_integers(my_list=[], x=0):
     except Exception:
         return
     else:
-        print("\n")
+        print()
         return count
