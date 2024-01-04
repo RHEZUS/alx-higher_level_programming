@@ -7,6 +7,7 @@ on an nxn grid such that they are all in non-attacking positions
 
 import sys
 
+
 def solve_nqueens(N):
     """Solve the problem"""
     def is_safe(board, row, col):
@@ -38,8 +39,8 @@ def solve_nqueens(N):
 
     """Initialize an empty board"""
     board = [-1] * N
-    print(board)
     backtrack(board, 0)
+
 
 if __name__ == "__main__":
 
@@ -50,8 +51,9 @@ if __name__ == "__main__":
         N = int(sys.argv[1])
         if N < 4:
             print('N must be at least 4')
-    except:
+            sys.exit(1)
+    except Exception:
         print('N must be a number')
-
+        sys.exit(1)
 
     solve_nqueens(N)
