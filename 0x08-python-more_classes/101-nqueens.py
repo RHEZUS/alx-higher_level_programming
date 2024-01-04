@@ -21,12 +21,14 @@ def solve_nqueens(N):
 
     def print_solution(board):
         """Prints The solutions"""
+        print('[', end="")
         for i in range(N):
             if i == N - 1:
                 print("[{}, {}]".format(i, board[i]), end="")
             else:
                 print("[{}, {}]".format(i, board[i]), end=", ")
-        print()
+        print(']')
+       
 
     def backtrack(board, row):
         """The backtracking algorithm"""
