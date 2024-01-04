@@ -38,6 +38,7 @@ def solve_nqueens(N):
 
     """Initialize an empty board"""
     board = [-1] * N
+    print(board)
     backtrack(board, 0)
 
 if __name__ == "__main__":
@@ -52,9 +53,5 @@ if __name__ == "__main__":
     except:
         print('N must be a number')
 
-    answer_list = []
-
-    for i in range(N):
-        answer_list.append([i, None])
 
     solve_nqueens(N)
