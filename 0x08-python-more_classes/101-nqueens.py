@@ -28,7 +28,6 @@ def solve_nqueens(N):
             else:
                 print("[{}, {}]".format(i, board[i]), end=", ")
         print(']')
-       
 
     def backtrack(board, row):
         """The backtracking algorithm"""
