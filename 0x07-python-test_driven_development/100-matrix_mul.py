@@ -10,19 +10,19 @@ def matrix_mul(m_a, m_b):
         m_a (list of lists): first matrix
         m_b (list of lists): second matrix
     """
-    # check if matrixes are of type list
+    """check if matrixes are of type list"""
     if type(m_a) is not list:
         raise TypeError('m_a must be a list')
     if type(m_b) is not list:
         raise TypeError('m_b must be a list')
 
-    #check if matrixes are empty
+    """check if matrixes are empty"""
     if m_a == [] or m_a == [[]]:
         raise ValueError('m_a can\'t be empty')
     if m_b == [] or m_b == [[]]:
         raise ValueError('m_b can\'t be empty')
 
-    # other requirements checks for m_a
+    """other requirements checks for m_a"""
     for row in m_a:
         if type(row) is not list:
             raise TypeError('m_a must be a list of lists')
@@ -32,7 +32,7 @@ def matrix_mul(m_a, m_b):
             if type(col) not in (int, float):
                 raise TypeError('m_a should contain only integers or floats')
 
-    # other requirements checks for m_a   
+    """other requirements checks for m_a"""
     for row in m_b:
         if type(row) is not list:
             raise TypeError('m_b must be a list of lists')
@@ -41,23 +41,23 @@ def matrix_mul(m_a, m_b):
         for col in row:
             if type(col) not in (int, float):
                 raise TypeError('m_b should contain only integers or floats')
-            
+
     if len(m_a[0]) != len(m_b):
         raise ValueError('m_a and m_b can\'t be multiplied')
 
     mul_matrix = []
 
     for row_a in m_a:
-        l = 0
+        length = 0
         l_row = []
-        while l < len(m_b[0]):
+        while length < len(m_b[0]):
             result = 0
             k = 0
             for item in row_a:
-                result += item * m_b[k][l]
+                result += item * m_b[k][length]
                 k += 1
             l_row.append(result)
-            l += 1
+            length += 1
         mul_matrix.append(l_row)
 
     return mul_matrix
