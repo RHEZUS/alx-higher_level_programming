@@ -22,8 +22,4 @@ def text_indentation(text):
                 print("{}\n".format(ch))
                 flag = 0
             else:
-                print("".format(ch), end="")
-            
-        
-    if new_word != "":
-            print("{}\n".format(new_word))
+                print("{}".format(ch), end="")
