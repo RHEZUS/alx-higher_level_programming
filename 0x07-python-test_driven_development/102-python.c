@@ -1,5 +1,12 @@
 #include <stdio.h>
-#include "python3.11/Python.h"
+#include "Python.h"
+
+/**
+ * print_python_string: prints Python strings.
+ * @p: the python object
+ * Return: nothing
+ */
+
 
 void print_python_string(PyObject *p)
 {
