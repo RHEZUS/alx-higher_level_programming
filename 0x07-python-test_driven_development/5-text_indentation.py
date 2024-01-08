@@ -7,7 +7,7 @@ The 5-text_indentation module supplies one function, text_indentation(text).
 def text_indentation(text):
     """Indents a text"""
     result = []
-    separator = ("?", ".", ":")
+    separator = ("?", ".", ":", '\n')
     new_word = ""
     if type(text) is not str:
         raise TypeError('text must be a string')
