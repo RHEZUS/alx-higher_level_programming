@@ -5,4 +5,5 @@ contains the class BaseGeometry
 
 
 class BaseGeometry:
+    """Represent BaseGeometry"""
     pass
