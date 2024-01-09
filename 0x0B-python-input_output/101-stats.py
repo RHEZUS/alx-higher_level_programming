@@ -21,7 +21,7 @@ try:
                 file_size += int(splitted_line[-1])
                 if a == count:
                     count += 1
-            except Exception:
+            except FileNotFoundError:
                 if a == count:
                     continue
 
