@@ -1,3 +1,6 @@
 #!/usr/bin/python3
 def write_file(filename="", text=""):
-    pass
+    with open(filename, '+w', encoding='utf-8') as f:
+        f.write(text)
+
+write_file('test.txt', 'Hello world')
