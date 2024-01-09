@@ -11,11 +11,9 @@ splitted_line = []
 count = 0
 try:
     for line in sys.stdin:
-        count += 1
         splitted_line = line.strip().split(' ')
         if len(splitted_line) >= 2:
             a = count
-
             if splitted_line[-2] in status_codes:
                 status_codes[splitted_line[-2]] += 1
                 count += 1
@@ -27,22 +25,22 @@ try:
                 if a == count:
                     continue
 
-            if count == 10:
+            if count % 10 == 0:
                 print("File size: {:d}".format(file_size))
                 for key, value in sorted(status_codes.items()):
                     if value:
-                        print("{:s}: {:d}".format(key, status_codes[key]))
+                        print("{:s}: {:d}".format(key, value))
                 count = 0
 
         print("File size: {:d}".format(file_size))
         for key, value in sorted(status_codes.items()):
             if value:
-                print("{:s}: {:d}".format(key, status_codes[key]))
-except Exception:
+                print("{:s}: {:d}".format(key, value))
+except KeyboardInterrupt:
     print("File size: {:d}".format(file_size))
     for key, value in sorted(status_codes.items()):
         if value:
-            print("{:s}: {:d}".format(key, status_codes[key]))
+            print("{:s}: {:d}".format(key, value))
 
 """['242.182.96.142', '-', '[2024-01-09', '17:33:51.002132]',
 '"GET', '/projects/260', 'HTTP/1.1"', '401', '58']"""
