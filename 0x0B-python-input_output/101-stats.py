@@ -8,6 +8,7 @@ prints the following statistics:
     - Count of read status codes up to that point.
 """
 
+
 def print_stats(size, status_codes):
     """Print accumulated metrics.
 
@@ -20,8 +21,8 @@ def print_stats(size, status_codes):
         if value:
             print("{:s}: {:d}".format(key, value))
 
+
 if __name__ == "__main__":
-    
     import sys
 
     status_codes = {'200': 0, '301': 0, '400': 0, '401': 0,
@@ -29,19 +30,22 @@ if __name__ == "__main__":
     file_size = 0
     splitted_line = []
     count = 0
+
     try:
         for line in sys.stdin:
             if count == 10:
                 print_stats(file_size, status_codes)
-                count = 0
+                count = 1
             else:
                 count += 1
-            
-            splitted_line = line.split(' ')
+
+            splitted_line = line.split()
+
             try:
                 file_size += int(splitted_line[-1])
-            except  (IndexError, ValueError):
+            except (IndexError, ValueError):
                 pass
+
             try:
                 if splitted_line[-2] in status_codes:
                     status_codes[splitted_line[-2]] += 1
