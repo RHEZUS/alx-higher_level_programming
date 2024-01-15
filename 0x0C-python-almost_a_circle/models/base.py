@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import json
+import csv
+import turtle
 """
 Contains the class Base
 """
@@ -84,3 +86,30 @@ class Base:
         except FileNotFoundError:
             return tryRun
         return [cls.create(**obj) for obj in tryRun]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        my_turtle = turtle.Turtle()
+
+        for item in list_rectangles:
+            my_turtle.penup()
+            my_turtle.goto(item.x, item.y)
+            my_turtle.pendown()
+            my_turtle.forward(item.width)
+            my_turtle.right(90)
+            my_turtle.forward(item.height)
+            my_turtle.right(90)
+            my_turtle.forward(item.width)
+            my_turtle.right(90)
+            my_turtle.forward(item.height)
+            my_turtle.hideturtle()
+        my_turtle = turtle.Turtle()
+        my_turtle.penup()
+        for item in list_squares:
+            my_turtle.goto(item.x, item.y)
+
+            for _ in range(4):
+                turtle.forward(item.size)
+                turtle.right(90)
+            my_turtle.hideturtle()
+        turtle.mainloop()
