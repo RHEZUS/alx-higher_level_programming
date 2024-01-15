@@ -87,6 +87,7 @@ class Base:
             return tryRun
         return [cls.create(**obj) for obj in tryRun]
 
+    @staticmethod
     def draw(list_rectangles, list_squares):
         my_turtle = turtle.Turtle()
 
