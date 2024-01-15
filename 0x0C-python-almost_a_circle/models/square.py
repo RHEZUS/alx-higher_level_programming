@@ -2,16 +2,18 @@
 """Contains the class Square"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Represents a square"""
     def __init__(self, size, x=0, y=0, id=None):
         """Represents a square"""
         super().__init__(size, size, x, y, id)
-    
+
     def __str__(self):
         """Returns a string representation of a square"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
-    
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
+
     @property
     def size(self):
         """Returns the size of the square"""
@@ -26,7 +28,7 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         """Update the Square.
         Args:
@@ -54,19 +56,18 @@ class Square(Rectangle):
                 a += 1
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
-                match key:
-                    case "id":
-                        if value is None:
-                            self.__init__(self.size, self.x, self.y)
-                        else:
-                            self.id = value
-                    case "size":
-                        self.size = value
-                    case "x":
-                        self.x = value
-                    case "y":
-                        self.y = value
-    
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
     def to_dictionary(self):
         """Returns a dictionary representation"""
         return {

@@ -107,38 +107,36 @@ class Rectangle(Base):
         """Updates the properties of an object"""
         if args and len(args) != 0:
             i = 0
-            for arg in  args:
-                match i:
-                    case  0:
-                        if arg is None:
-                            self.__init__(self.width, self.height, self.x, self.y)
-                        else:
-                            self.id = arg
-                    case 1:
-                        self.width = arg
-                    case 2:
-                        self.height = arg
-                    case 3:
-                        self.x = arg
-                    case 4:
-                        self.y = arg
+            for arg in args:
+                if i == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
                 i += 1
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
-                match key:
-                    case "id":
-                        if value is None:
-                            self.__init__(self.width, self.height, self.x, self.y)
-                        else:
-                            self.id = value
-                    case "width":
-                        self.width = value
-                    case "height":
-                        self.height = value
-                    case "x":
-                        self.x = value
-                    case "y":
-                        self.y = value
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
         """Returns a dictionary representation"""
@@ -149,6 +147,3 @@ class Rectangle(Base):
             "x": self.x,
             "y": self.y
         }
-    
-    
-    
