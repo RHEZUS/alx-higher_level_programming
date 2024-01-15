@@ -84,4 +84,3 @@ class Base:
         except FileNotFoundError:
             return tryRun
         return [cls.create(**obj) for obj in tryRun]
-
