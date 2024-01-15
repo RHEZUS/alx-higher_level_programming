@@ -2,6 +2,7 @@
 """
 Contains the Class Rectangle
 """
+import json
 from models.base import Base
 
 
