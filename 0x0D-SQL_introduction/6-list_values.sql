@@ -1,2 +1,2 @@
---List everything in the table
+-- List everything in the table
 SELECT * FROM first_table
