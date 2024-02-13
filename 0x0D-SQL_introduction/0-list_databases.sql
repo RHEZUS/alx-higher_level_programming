@@ -1,2 +1,2 @@
---SHows the list of Databases
+-- SHows the list of Databases
 SHOW DATABASES;
