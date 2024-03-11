@@ -1,19 +1,9 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
-
-if (argv.length == 2)
-{
-	console.log(0);
-}
-else 
-{
-	let numbers = [];
-	for (let i = 2; i < argv.length; i++)
-	{
-		numbers = [...numbers, parseInt(argv[i])];
-	}
-	numbers.sort((a, b) => b - a);
-	const uniqueNumbers = [...new Set(numbers)];
-	console.log(uniqueNumbers[1]);
+if (process.argv.length <= 3) {
+    console.log('0');
+  } else {
+    const arr = process.argv.slice(2).map(Number);
+    const second = arr.sort(function (a, b) { return b - a; })[1];
+    console.log(second);
 }
