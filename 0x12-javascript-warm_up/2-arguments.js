@@ -1,6 +1,18 @@
 #!/usr/bin/node
 
-const fs = require('fs');
-const path = require('path');
-const program = require('commander');
-const chalk = require('chalk');
+const { argv } = require('node:process');
+
+
+if (argv.length === 2)
+{
+	console.log('No argument');
+}
+else if(argv.length === 3)
+{
+	console.log('Argument found');
+}
+
+else
+{
+	console.log('Arguments found');
+}
