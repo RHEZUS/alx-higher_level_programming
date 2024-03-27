@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -s -w \%{Content-Length} -o /dev/null $1
+curl -s "$1" | wc -c
