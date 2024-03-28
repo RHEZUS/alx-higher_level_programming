@@ -2,7 +2,7 @@
 
 """
 - takes in a URL
-- sends a request to the URL 
+- sends a request to the URL
 - displays the body of the response (decoded in utf-8)
 """
 
