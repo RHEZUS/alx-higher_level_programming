@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-
+"""lists the 10 most recent commits on a given GitHub repository.
 """
-Write a Python script that takes 2
-arguments in order to solve this challenge
-"""
-
 import sys
 import requests
 
