@@ -6,11 +6,11 @@ with the email as a parameter
 - and finally displays the body of the response
 """
 import sys
-import requests
-
+import urllib.request
 
 if __name__ == "__main__":
     url = sys.argv[1]
 
-    r = requests.get(url)
-    print(r.headers.get("X-Request-Id"))
+    request = urllib.request.Request(url)
+    with urllib.request.urlopen(request) as response:
+        print(dict(response.headers).get("X-Request-Id"))
